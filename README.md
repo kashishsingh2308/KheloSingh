@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/7e45c0f3-e83e-4785-a96a-3360614f3ca0
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Khelo Singh's
+Scoring Guide & Rules
+Standard Score Calculations
+Exact Match: Hand wins match precisely with Bid.
+👉 Score = bid × 10
+Under-bid: Hands won is strictly less than Bid.
+👉 Score = - (bid × 10)
+Over-bid: Hands won is strictly greater than Bid.
+👉 Score = (bid × 10) + 1
+🎲 Blind Bid Rule
+Can only be checked if player's Bid ≥ 5.
+Blind Exact: Match bid exactly.
+👉 Score = bid × 20
+Blind Fail: Any under or over results.
+👉 Score = - (bid × 10)
+Constraints
+Each round must have a minimum bid of 2.
+Actual hands matches cannot be empty and are checked against actual gameplay.
