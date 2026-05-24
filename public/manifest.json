@@ -1,0 +1,32 @@
+{
+  "short_name": "CardScores",
+  "name": "Card Game Score Tracker",
+  "description": "Calculate bids, record scores, and track standings for our 4-player card game with automatic rule verification.",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["utilities", "games"],
+  "shortcuts": [
+    {
+      "name": "New Game",
+      "url": "/?action=new-game",
+      "description": "Reset stats and start a fresh card game score session"
+    }
+  ]
+}

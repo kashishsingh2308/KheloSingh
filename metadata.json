@@ -1,0 +1,6 @@
+{
+  "name": "Khelo Singh's",
+  "description": "A mobile-first score tracker for a 4-player card game with 13 rounds, bid rules, live totals, and offline support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
