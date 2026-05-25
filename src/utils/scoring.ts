@@ -11,10 +11,11 @@ import { PlayerRoundState, Round, PLAYERS, PlayerId } from '../types';
  * - Non-blind:
  *   - Exact match -> bid * 10
  *   - Under (actual < bid) -> - (bid * 10)
- *   - Over (actual > bid) -> (bid * 10) + 1
+ *   - Over (actual > bid) -> (bid * 10) + actual - bid
  * - Blind (only if bid >= 5):
  *   - Exact match -> bid * 20
- *   - Fail (actual != bid) -> - (bid * 10)
+ *   - Under (actual < bid) -> - (bid * 10)
+ *   - Over (actual > bid) -> (bid * 20) + actual - bid
  */
 export function calculateRoundScore(state: PlayerRoundState): number {
   const { bid, actual, isBlind } = state;
@@ -26,8 +27,10 @@ export function calculateRoundScore(state: PlayerRoundState): number {
   if (isBlind && effectiveBid >= 5) {
     if (actual === effectiveBid) {
       return effectiveBid * 20;
-    } else {
+    } else if (actual < effectiveBid) {
       return -(effectiveBid * 10);
+    } else {
+      return (effectiveBid * 20) + actual - effectiveBid;
     }
   } else {
     if (actual === effectiveBid) {
@@ -35,7 +38,7 @@ export function calculateRoundScore(state: PlayerRoundState): number {
     } else if (actual < effectiveBid) {
       return -(effectiveBid * 10);
     } else {
-      return (effectiveBid * 10) + 1;
+      return (effectiveBid * 10) + actual - effectiveBid;
     }
   }
 }
